@@ -6,19 +6,10 @@ const authroutes = require('./router/authRout');
 const categoryRoute = require('./router/categoryRoute');
 const productRoute = require('./router/productRoute')
 const path = require('path')//this is for deployment
-const cors = require('cors')
+const{fileURLToPath} = require('url');
 
-dotenv.config();
-// database connection
-dbConnect();
-
-const app = express();
-
-app.use(cors())
-app.use(morgan('dev'));
-app.use(express.json())
-app.use(express.static(path.join(__dirname , './client/build')))
-//routes 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 app.use('/api/v1/auth' , authroutes);
 app.use('/api/v1/category' , categoryRoute );
 app.use('/api/v1/products' , productRoute );
