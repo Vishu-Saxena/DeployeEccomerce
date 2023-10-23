@@ -4,7 +4,7 @@
   "description": "this is my first eccormce with backend",
   "main": "index.js",
   "scripts": {
-    "serve": "nodemon server.js",
+    "start": "node index.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix ./client",
     "dev": "concurrently \"npm run start\" \"npm run client\""
